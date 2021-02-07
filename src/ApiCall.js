@@ -19,8 +19,8 @@ const ApiCalls = ()=>{
     let publishDateArr1 = [];
 
     useEffect(() => {
-        // const url='https://newsapi.org/v2/top-headlines?source=google-news&country=in&apiKey=268e054927524b29a1ee6bc18d52e589'; // my api key
-        const url='https://newsapi.org/v2/top-headlines?source=google-news&country=in&apiKey=a9b320f1f47644f99dab6b9407db90b0'; // other api key
+        const url='https://newsapi.org/v2/top-headlines?source=google-news&country=in&apiKey=268e054927524b29a1ee6bc18d52e589'; // my api key
+        // const url='https://newsapi.org/v2/top-headlines?source=google-news&country=in&apiKey=a9b320f1f47644f99dab6b9407db90b0'; // other api key
         fetch(url,{
            method: 'GET' 
         })
