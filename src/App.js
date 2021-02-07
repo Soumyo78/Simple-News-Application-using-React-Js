@@ -29,10 +29,7 @@ class App extends React.Component {
         <div className="btn-time-container">
           <button id="reload-btn" className="btn" onClick={this.reload}>Update</button>
           <h3 className="time-date-container">
-            Time 
-            <span id="time-string"></span>
-            | Date
-            <span id="date-string">Feb 6 2021</span>
+            Time<span id="time-string"></span>| Date<span id="date-string">Feb 6 2021</span>
           </h3>
           <button id="exit-btn" className="btn" onClick={this.exit}>Exit</button>
         </div>

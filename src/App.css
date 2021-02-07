@@ -50,3 +50,17 @@
   display: flex;
   justify-content: center;
 }
+
+@media screen and (max-width: 700px){
+  .btn-time-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .time-date-container{
+    text-align: center;
+    display: block;
+  }
+}
