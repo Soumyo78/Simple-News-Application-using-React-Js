@@ -11,7 +11,7 @@ const NewsCard = (props) =>{
                         <div className="news-description">{props.descriptionArr[index]}</div>
                         <div className="read-more-text-container"><a href={props.urlArr[index]} target="_blank" rel="noreferrer">Click here to read more ...</a></div>
                         <div className="author-publish-date-container">
-                            <h5>Author: <span>{props.authorArr[index]}</span></h5>
+                            {props.authorArr[index] && <h5>Author: <span>{props.authorArr[index]}</span></h5>}
                             <h5>Published at: <span>{props.publishDateArr[index]}</span></h5>
                         </div>
                     </article>
