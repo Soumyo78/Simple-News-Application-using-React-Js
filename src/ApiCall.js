@@ -1,6 +1,7 @@
 import NewsCard from './Components/NewCard/index';
 import {useEffect, useState} from 'react';
 
+const axios = require('axios');
 const ApiCalls = ()=>{
 
     const [titleArr, setTitle] = useState([]);
@@ -19,13 +20,16 @@ const ApiCalls = ()=>{
     let publishDateArr1 = [];
 
     useEffect(() => {
+        
         const url='https://newsapi.org/v2/top-headlines?source=google-news&country=in&apiKey=268e054927524b29a1ee6bc18d52e589'; // my api key
         // const url='https://newsapi.org/v2/top-headlines?source=google-news&country=in&apiKey=a9b320f1f47644f99dab6b9407db90b0'; // other api key
-        fetch(url,{
-           method: 'GET' 
-        })
-        .then(res => res.json())
+        axios.get(url)
         .then(res =>{
+            const { data } = res
+            return data
+        })
+        .then(res =>{
+            console.log(res)
             newsArr.push(res.articles);
             return newsArr;
         })
@@ -38,7 +42,8 @@ const ApiCalls = ()=>{
                 urlArr1.push(url);
                 imgUrlArr1.push(urlToImage);
                 authorArr1.push(author);
-                publishDateArr1.push(publishedAt);
+                var d = new Date(publishedAt);
+                publishDateArr1.push(d.toLocaleString('en-IN', { hour12: true }));
                 
             }
 

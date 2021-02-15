@@ -4,6 +4,7 @@ const NewsCard = (props) =>{
     return(
         <main className="main-container">
         {props.titleArr.map((item, index)=>{
+           
             return(
                 <div key={index} className="news-card-main-container">
                     <article className="content-container">
