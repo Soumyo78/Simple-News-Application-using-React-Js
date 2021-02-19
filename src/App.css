@@ -51,6 +51,10 @@
   justify-content: center;
 }
 
+.main-content-container{
+  display: flex;
+}
+
 @media screen and (max-width: 700px){
   .btn-time-container{
     width: 100%;

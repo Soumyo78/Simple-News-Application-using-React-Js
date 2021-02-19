@@ -1,0 +1,29 @@
+
+.country-navbar-container{
+    display: flex;
+    list-style-type: none;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 0;
+    margin-top: 30px;
+    background-color: rgb(58, 58, 58);
+    flex-direction: column;
+    width: 30%;
+    height: fit-content;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.country-navbar-container a{
+    padding: 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.country-navbar-container a:hover{
+    background-color: rgb(122, 122, 122);
+}
+
+.country-navbar-container a{
+    text-decoration: none;
+    color: white;
+}

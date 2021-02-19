@@ -1,0 +1,28 @@
+
+.news-category-nav-container{
+    display: flex;
+    list-style-type: none;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 0;
+    margin: 10px;
+    width: 100%;
+    background-color: rgb(58, 58, 58);
+    border-radius: 5px 5px 5px 5px;
+    justify-content: space-around;
+}
+
+.news-category-nav-container a{
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.news-category-nav-container a:hover{
+    background-color: rgb(122, 122, 122);
+}
+
+.news-category-nav-container a{
+    text-decoration: none;
+    color: white;
+}

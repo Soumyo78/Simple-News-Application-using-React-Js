@@ -2,7 +2,12 @@ import NewsCard from './Components/NewCard/index';
 import {useEffect, useState} from 'react';
 
 const axios = require('axios');
-const ApiCalls = ()=>{
+
+const ApiCalls = (props)=>{
+
+    let url;
+    const apiKey1 = "apiKey=268e054927524b29a1ee6bc18d52e589";
+    const apiKey2 = "apiKey=a9b320f1f47644f99dab6b9407db90b0";
 
     const [titleArr, setTitle] = useState([]);
     const [descriptionArr, setDescription] = useState([]);
@@ -10,6 +15,12 @@ const ApiCalls = ()=>{
     const [imgUrlArr, setImg] = useState([]);
     const [authorArr, setAuthor] = useState([]);
     const [publishDateArr, setPublishDate] = useState([]);
+
+    useEffect(() => {
+
+        url=`https://newsapi.org/v2/top-headlines?source=google-news&country=${props.countryCode}&${apiKey1}`;
+            
+    }, [props.countryCode])
 
     let newsArr = [];
     let titleArr1 = [];
@@ -21,15 +32,12 @@ const ApiCalls = ()=>{
 
     useEffect(() => {
         
-        const url='https://newsapi.org/v2/top-headlines?source=google-news&country=in&apiKey=268e054927524b29a1ee6bc18d52e589'; // my api key
-        // const url='https://newsapi.org/v2/top-headlines?source=google-news&country=in&apiKey=a9b320f1f47644f99dab6b9407db90b0'; // other api key
         axios.get(url)
         .then(res =>{
-            const { data } = res
-            return data
+            const { data } = res;
+            return data;
         })
         .then(res =>{
-            console.log(res)
             newsArr.push(res.articles);
             return newsArr;
         })
