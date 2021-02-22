@@ -15,13 +15,7 @@ const ApiCalls = (props)=>{
     const [imgUrlArr, setImg] = useState([]);
     const [authorArr, setAuthor] = useState([]);
     const [publishDateArr, setPublishDate] = useState([]);
-
-    useEffect(() => {
-
-        url=`https://newsapi.org/v2/top-headlines?source=google-news&country=${props.countryCode}&${apiKey1}`;
-            
-    }, [props.countryCode])
-
+    
     let newsArr = [];
     let titleArr1 = [];
     let descriptionArr1 = [];
@@ -31,6 +25,8 @@ const ApiCalls = (props)=>{
     let publishDateArr1 = [];
 
     useEffect(() => {
+
+        url=`https://newsapi.org/v2/top-headlines?source=google-news&country=${props.countryCode}&${apiKey1}`;
         
         axios.get(url)
         .then(res =>{
@@ -62,7 +58,7 @@ const ApiCalls = (props)=>{
             setAuthor(authorArr1);
             setPublishDate(publishDateArr1);
         })
-    }, [])
+    }, [props.countryCode])
 
     return(
         <>
