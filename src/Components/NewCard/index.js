@@ -17,7 +17,7 @@ const NewsCard = (props) =>{
                         </div>
                     </article>
                     <div className="image-container">
-                        <img className="news-img" src={props.imgUrlArr[index]} alt={item} />
+                        {props.imgUrlArr[index] && <img className="news-img" src={props.imgUrlArr[index]} alt={item}/>}
                     </div>
                 </div>
             )

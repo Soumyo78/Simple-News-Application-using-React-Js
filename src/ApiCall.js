@@ -1,5 +1,6 @@
 import NewsCard from './Components/NewCard/index';
 import {useEffect, useState} from 'react';
+import NewsCategory from './Components/Category Navbar/index';
 
 const axios = require('axios');
 
@@ -15,7 +16,7 @@ const ApiCalls = (props)=>{
     const [imgUrlArr, setImg] = useState([]);
     const [authorArr, setAuthor] = useState([]);
     const [publishDateArr, setPublishDate] = useState([]);
-    
+
     let newsArr = [];
     let titleArr1 = [];
     let descriptionArr1 = [];
@@ -26,8 +27,10 @@ const ApiCalls = (props)=>{
 
     useEffect(() => {
 
-        url=`https://newsapi.org/v2/top-headlines?source=google-news&country=${props.countryCode}&${apiKey1}`;
+        url=`https://newsapi.org/v2/top-headlines?source=google-news&country=${props.countryCode}&${apiKey2}&category=${props.categoryCode}`;
         
+        console.log(url)
+
         axios.get(url)
         .then(res =>{
             const { data } = res;
@@ -37,7 +40,6 @@ const ApiCalls = (props)=>{
             newsArr.push(res.articles);
             return newsArr;
         })
-        .catch(err => console.log(err))
         .then(newsArr =>{
             for (let i=0; i<newsArr[0].length; i++){
                 const {title, description, url, urlToImage, author, publishedAt} = newsArr[0][i];
@@ -58,12 +60,13 @@ const ApiCalls = (props)=>{
             setAuthor(authorArr1);
             setPublishDate(publishDateArr1);
         })
-    }, [props.countryCode])
+        .catch(err => alert(err))
+    }, [props.countryCode, props.categoryCode])
 
     return(
-        <>
+        <div className="category-newscard-container">
             <NewsCard titleArr={titleArr} descriptionArr={descriptionArr} urlArr={urlArr} imgUrlArr={imgUrlArr} authorArr={authorArr} publishDateArr={publishDateArr}/>
-        </>
+        </div>
     );
 }
 

@@ -1,8 +1,6 @@
 import './App.css';
 import React from 'react';
-import Routes from './Routes';
 import CountryNavBar from './Components/Country Navbar/index';
-import NewsCategory from './Components/Category Navbar/index';
 
 
 class App extends React.Component {
@@ -35,10 +33,8 @@ class App extends React.Component {
           </h3>
           <button id="exit-btn" className="btn" onClick={this.exit}>Exit</button>
         </div>
-        <NewsCategory/>
-        <div className="main-content-container">
+        <div className="navbar-container">
           <CountryNavBar/>
-          <Routes/>
         </div>
       </div>
     );
