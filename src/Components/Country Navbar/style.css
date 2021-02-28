@@ -2,14 +2,15 @@
 .country-navbar-container{
     display: flex;
     list-style-type: none;
-    margin-top: 20px;
-    margin-right: 20px;
     padding: 0;
-    margin: 10px;
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
     width: 100%;
-    background-color: rgb(58, 58, 58);
-    border-radius: 5px 5px 5px 5px;
-    justify-content: space-around;
+    background-color: #2874F0;
+    box-shadow: 0px -9px 14px -4px rgba(0,0,0,0.75);
+    border-radius: 5px 5px 0px 0px;
+    justify-content: space-between;
 }
 
 .country-navbar-container a{
@@ -19,7 +20,8 @@
 }
 
 .country-navbar-container a:hover{
-    background-color: rgb(122, 122, 122);
+    text-decoration: underline;
+    text-underline-position: under;
 }
 
 .country-navbar-container a{

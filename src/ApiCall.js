@@ -27,7 +27,7 @@ const ApiCalls = (props)=>{
 
     useEffect(() => {
 
-        url=`https://newsapi.org/v2/top-headlines?source=google-news&country=${props.countryCode}&${apiKey2}&category=${props.categoryCode}`;
+        url=`https://newsapi.org/v2/top-headlines?source=google-news&country=${props.countryCode}&${apiKey1}&category=${props.categoryCode}`;
         
         console.log(url)
 

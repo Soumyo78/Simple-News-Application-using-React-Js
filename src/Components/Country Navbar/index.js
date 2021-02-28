@@ -10,19 +10,19 @@ const CountryNavBar = ()=>{
     return(
         <>
         <nav className="country-navbar-container">
-            <NavLink to={`${url}india`} exact activeStyle={{backgroundColor:"green"}}>India</NavLink>
-            <NavLink to={`${url}usa`} exact activeStyle={{backgroundColor:"green"}}>USA</NavLink>
-            <NavLink to={`${url}russia`} exact activeStyle={{backgroundColor:"green"}}>Russia</NavLink>
-            <NavLink to={`${url}china`} exact activeStyle={{backgroundColor:"green"}}>China</NavLink>
-            <NavLink to={`${url}brazil`} exact activeStyle={{backgroundColor:"green"}}>Brazil</NavLink>
-            <NavLink to={`${url}germany`} exact activeStyle={{backgroundColor:"green"}}>Germany</NavLink>
-            <NavLink to={`${url}france`} exact activeStyle={{backgroundColor:"green"}}>France</NavLink>
-            <NavLink to={`${url}uk`} exact activeStyle={{backgroundColor:"green"}}>UK</NavLink>
-            <NavLink to={`${url}italy`} exact activeStyle={{backgroundColor:"green"}}>Italy</NavLink>
-            <NavLink to={`${url}japan`} exact activeStyle={{backgroundColor:"green"}}>Japan</NavLink>
-            <NavLink to={`${url}south_korea`} exact activeStyle={{backgroundColor:"green"}}>South Korea</NavLink>
-            <NavLink to={`${url}mexico`} exact activeStyle={{backgroundColor:"green"}}>Mexico</NavLink>
-            <NavLink to={`${url}saudi_arabia`} exact activeStyle={{backgroundColor:"green"}}>Saudi Arabia</NavLink>
+            <NavLink to={`${url}india`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>India</NavLink>
+            <NavLink to={`${url}usa`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>USA</NavLink>
+            <NavLink to={`${url}russia`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>Russia</NavLink>
+            <NavLink to={`${url}china`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>China</NavLink>
+            <NavLink to={`${url}brazil`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>Brazil</NavLink>
+            <NavLink to={`${url}germany`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>Germany</NavLink>
+            <NavLink to={`${url}france`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>France</NavLink>
+            <NavLink to={`${url}uk`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>UK</NavLink>
+            <NavLink to={`${url}italy`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>Italy</NavLink>
+            <NavLink to={`${url}japan`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>Japan</NavLink>
+            <NavLink to={`${url}south_korea`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>South Korea</NavLink>
+            <NavLink to={`${url}mexico`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>Mexico</NavLink>
+            <NavLink to={`${url}saudi_arabia`} activeStyle={{backgroundColor:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>Saudi Arabia</NavLink>
         </nav>
 
         <Switch>
