@@ -1,4 +1,5 @@
 import './style.css';
+import DefaultPic from '../../Resources/defaullt-news-pic.webp';
 
 const NewsCard = (props) =>{
     return(
@@ -17,7 +18,11 @@ const NewsCard = (props) =>{
                         </div>
                     </article>
                     <div className="image-container">
-                        {props.imgUrlArr[index] && <img className="news-img" src={props.imgUrlArr[index]} alt={item}/>}
+                        {
+                            props.imgUrlArr[index] ? 
+                            <img className="news-img" src={props.imgUrlArr[index]} alt={item}/> :
+                            <img className="news-img" src={DefaultPic} alt={item}/>
+                        }
                     </div>
                 </div>
             )

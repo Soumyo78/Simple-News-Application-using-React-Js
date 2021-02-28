@@ -1,6 +1,5 @@
 import NewsCard from './Components/NewCard/index';
 import {useEffect, useState} from 'react';
-import NewsCategory from './Components/Category Navbar/index';
 
 const axios = require('axios');
 
