@@ -5,7 +5,6 @@ import ApiCall from '../../ApiCall';
 const NewsCategory = ()=>{
 
     let { path, url } = useRouteMatch();
-    console.log(path)
 
     const countryCodes = {
         '/india': "in",
@@ -22,8 +21,6 @@ const NewsCategory = ()=>{
         '/mexico': "mx",
         '/saudi_arabia': "sa"
     }
-
-    console.log(countryCodes[path])
     
     return(
        <>

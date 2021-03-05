@@ -68,6 +68,20 @@
   align-items: center;
 }
 
+#load-more-btn{
+  color: white;
+  background-color: #2874F0;
+  font-size: 25px;
+  border-radius: 5px 5px 5px 5px;
+  border: none;
+  margin-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 700px){
   .btn-time-container{
     width: 100%;
