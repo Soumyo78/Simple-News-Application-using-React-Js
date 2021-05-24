@@ -1,4 +1,4 @@
-.app-container{
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,29 +7,29 @@
   padding-right: 100px;
 }
 
-.btn-time-container{
+.btn-time-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-#reload-btn{
+#reload-btn {
   background-color: green;
 }
 
-#reload-btn:hover{
+#reload-btn:hover {
   background-color: springgreen;
 }
 
-#exit-btn{
+#exit-btn {
   background-color: red;
 }
 
-#exit-btn:hover{
+#exit-btn:hover {
   background-color: rgb(235, 104, 104);
 }
 
-.btn{
+.btn {
   color: white;
   font-size: 25px;
   border-radius: 5px 5px 5px 5px;
@@ -41,36 +41,36 @@
   cursor: pointer;
 }
 
-.btn:focus{
+.btn:focus {
   outline: none;
 }
 
-.time-date-container{
+.time-date-container {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.main-content-container{
+.main-content-container {
   display: flex;
 }
 
-.navbar-container{
+.navbar-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
 }
 
-.category-newscard-container{
+.category-newscard-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#load-more-btn{
+#load-more-btn {
   color: white;
-  background-color: #2874F0;
+  background-color: #2874f0;
   font-size: 25px;
   border-radius: 5px 5px 5px 5px;
   border: none;
@@ -82,15 +82,37 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 700px){
-  .btn-time-container{
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin: 150px;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 700px) {
+  .btn-time-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
   }
 
-  .time-date-container{
+  .time-date-container {
     text-align: center;
     display: block;
   }

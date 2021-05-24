@@ -1,45 +1,50 @@
-import './App.css';
-import React from 'react';
-import CountryNavBar from './Components/Country Navbar/index';
-
+import "./App.css";
+import React from "react";
+import CountryNavBar from "./Components/Country Navbar/index";
 
 class App extends React.Component {
-
-  reload = ()=>{
+  reload = () => {
     window.location.reload(true);
-  }
+  };
 
-  exit = ()=>{
-    window.close()
-  }
+  exit = () => {
+    window.close();
+  };
 
-  componentDidMount(){
+  componentDidMount() {
     setInterval(() => {
       const today = new Date();
-      document.getElementById('time-string').innerHTML = `: ${today.toLocaleTimeString('en-US')} |`;
-      document.getElementById('date-string').innerHTML = `: ${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`;
-    }, 10)
+      document.getElementById(
+        "time-string"
+      ).innerHTML = `: ${today.toLocaleTimeString("en-US")} |`;
+      document.getElementById(
+        "date-string"
+      ).innerHTML = `: ${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`;
+    }, 10);
   }
 
-  render(){
-
+  render() {
     return (
       <div className="app-container">
         <h1>Live Headlines</h1>
         <div className="btn-time-container">
-          <button id="reload-btn" className="btn" onClick={this.reload}>Update</button>
+          <button id="reload-btn" className="btn" onClick={this.reload}>
+            Update
+          </button>
           <h3 className="time-date-container">
-            Time<span id="time-string"></span>| Date<span id="date-string">Feb 6 2021</span>
+            Time<span id="time-string"></span>| Date
+            <span id="date-string">Feb 6 2021</span>
           </h3>
-          <button id="exit-btn" className="btn" onClick={this.exit}>Exit</button>
+          <button id="exit-btn" className="btn" onClick={this.exit}>
+            Exit
+          </button>
         </div>
         <div className="navbar-container">
-          <CountryNavBar/>
+          <CountryNavBar />
         </div>
       </div>
     );
   }
-  
- }
+}
 
 export default App;
