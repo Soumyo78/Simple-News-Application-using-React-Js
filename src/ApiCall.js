@@ -1,5 +1,5 @@
 import NewsCard from "./Components/NewCard/index";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const axios = require("axios");
 let newsArr = [];
@@ -16,21 +16,24 @@ const ApiCalls = (props) => {
   const [imgUrlArr, setImg] = useState([]);
   const [authorArr, setAuthor] = useState([]);
   const [publishDateArr, setPublishDate] = useState([]);
-  const [pageNo, setPageNo] = useState(1);
+  const pageNo = useRef(1);
 
   const newsCall = () => {
     loading = true;
-    url = `https://newsapi.org/v2/top-headlines?source=google-news&country=${props.countryCode}&${apiKey1}&category=${props.categoryCode}&page=${pageNo}`;
+    url = `https://newsapi.org/v2/top-headlines?source=google-news&country=${props.countryCode}&${apiKey1}&category=${props.categoryCode}&page=${pageNo.current}`;
 
+    console.log(url);
     axios
       .get(url)
       .then((res) => {
         loading = false;
+        console.log(res.data);
         const { data } = res;
         return data;
       })
       .then((res) => {
         newsArr = newsArr.concat(res.articles);
+        console.log(newsArr)
         return newsArr;
       })
       .then((newsArr) => {
@@ -62,21 +65,17 @@ const ApiCalls = (props) => {
   };
 
   useEffect(() => {
+    clearStates();
+    newsArr = [];
     newsCall();
     return () => {
       clearStates();
-    };
-  }, [props.countryCode, props.categoryCode, pageNo]);
-
-  useEffect(() => {
-    setPageNo(1);
-    return () => {
       newsArr = [];
     };
   }, [props.countryCode, props.categoryCode]);
 
   return loading ? (
-    <div class="loader"></div>
+    <div className="loader"></div>
   ) : (
     <div className="category-newscard-container">
       <NewsCard
@@ -90,7 +89,10 @@ const ApiCalls = (props) => {
       <button
         id="load-more-btn"
         onClick={() => {
-          setPageNo(pageNo + 1);
+          clearStates();
+          pageNo.current += 1;
+          console.log(pageNo.current);
+          newsCall();
         }}
       >
         Load More

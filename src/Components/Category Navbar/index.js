@@ -64,17 +64,6 @@ const NewsCategory = () => {
           Entertainment
         </NavLink>
         <NavLink
-          to={`${url}/general`}
-          exact
-          activeStyle={{
-            textDecoration: "underline",
-            textUnderlinePosition: "under",
-            color: "#2874F0",
-          }}
-        >
-          General
-        </NavLink>
-        <NavLink
           to={`${url}/health`}
           exact
           activeStyle={{
@@ -132,9 +121,6 @@ const NewsCategory = () => {
             countryCode={countryCodes[path]}
             categoryCode={"entertainment"}
           />
-        </Route>
-        <Route path={`${path}/general`}>
-          <ApiCall countryCode={countryCodes[path]} categoryCode={"general"} />
         </Route>
         <Route path={`${path}/health`}>
           <ApiCall countryCode={countryCodes[path]} categoryCode={"health"} />
